@@ -1,0 +1,259 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'KaiTi', '楷体', 'SimSun', '宋体', serif;
+    background-color: #f9f0e6;
+    color: #333;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="%23a02c2c" stroke-width="2" opacity="0.1"/><path d="M50,15 L50,85 M15,50 L85,50 M25,25 L75,75 M25,75 L75,25" stroke="%23a02c2c" stroke-width="1" opacity="0.1"/><circle cx="50" cy="50" r="15" fill="none" stroke="%23a02c2c" stroke-width="1" opacity="0.1"/><path d="M20,50 C30,30 70,30 80,50 C70,70 30,70 20,50 Z" fill="none" stroke="%23a02c2c" stroke-width="1" opacity="0.1"/></svg>');
+    background-size: 200px 200px;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><defs><pattern id="bamboo" patternUnits="userSpaceOnUse" width="100" height="100"><path d="M30,10 C28,20 32,30 30,40 C28,50 32,60 30,70 C28,80 32,90 30,100" stroke="%23355e3b" stroke-width="5" fill="none" opacity="0.2"/><path d="M50,0 C48,10 52,20 50,30 C48,40 52,50 50,60 C48,70 52,80 50,90" stroke="%23355e3b" stroke-width="5" fill="none" opacity="0.2"/><path d="M70,10 C68,20 72,30 70,40 C68,50 72,60 70,70 C68,80 72,90 70,100" stroke="%23355e3b" stroke-width="5" fill="none" opacity="0.2"/></pattern></defs><rect x="0" y="0" width="400" height="400" fill="%23f9f0e6" opacity="0.8"/><rect x="0" y="0" width="400" height="400" fill="url(%23bamboo)" opacity="0.3"/></svg>');
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* 页眉样式 */
+header {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #a02c2c, transparent);
+    margin: 20px auto 0;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30"><path d="M20,15 C30,5 40,25 50,15 C60,5 70,25 80,15" stroke="%23a02c2c" stroke-width="2" fill="none"/><circle cx="20" cy="15" r="3" fill="%23a02c2c"/><circle cx="50" cy="15" r="3" fill="%23a02c2c"/><circle cx="80" cy="15" r="3" fill="%23a02c2c"/></svg>');
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1 {
+    color: #a02c2c;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 5px;
+    font-family: 'STXingkai', '华文行楷', 'KaiTi', '楷体', serif;
+}
+
+/* 视频容器样式 */
+.video-container {
+    width: 70%;  /* 从80%减小到70% */
+    max-width: 600px;  /* 从800px减小到600px */
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+    border: 1px solid #d4a017;
+    overflow: hidden;
+}
+
+.video-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to right, #a02c2c, #d4a017);
+}
+
+.video-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 5px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="5" viewBox="0 0 20 5"><path d="M0,2.5 L5,0 L10,5 L15,0 L20,2.5" fill="none" stroke="%23a02c2c" stroke-width="1"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 20px 5px;
+}
+
+video {
+    width: 100%;
+    max-height: 400px;  /* 添加最大高度限制 */
+    object-fit: contain;  /* 确保视频保持其原始比例 */
+    display: block;
+    border-radius: 3px;
+    background-color: #000;
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+button {
+    background-color: #a02c2c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'KaiTi', '楷体', 'SimSun', '宋体', serif;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(160, 44, 44, 0.3);
+}
+
+button:hover {
+    background-color: #8a2020;
+    transform: translateY(-2px);
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+button:active::after {
+    opacity: 1;
+}
+
+/* 内容区域样式 */
+.content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin: 30px 0;
+    border: 1px solid #d4a017;
+    position: relative;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #a02c2c;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-family: 'STXingkai', '华文行楷', 'KaiTi', '楷体', serif;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #a02c2c, transparent);
+}
+
+.culture-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.element {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    border-left: 3px solid #a02c2c;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.element::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M5,5 L25,5 L25,25 L5,25 Z" stroke="%23a02c2c" stroke-width="1" fill="none" opacity="0.3"/><path d="M10,10 L20,10 L20,20 L10,20 Z" stroke="%23a02c2c" stroke-width="1" fill="none" opacity="0.3"/><circle cx="15" cy="15" r="3" stroke="%23a02c2c" stroke-width="1" fill="none" opacity="0.3"/></svg>');
+    opacity: 0.5;
+}
+
+h3 {
+    color: #8b4513;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-family: 'KaiTi', '楷体', serif;
+    border-bottom: 1px dashed #d4a017;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid #d4a017;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .video-container {
+        width: 95%;
+    }
+    
+    .culture-elements {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
